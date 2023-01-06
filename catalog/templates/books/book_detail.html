@@ -3,12 +3,18 @@
 {% block content %}
     <h1>Title: {{ book.title }}</h1>
 
-    <p><strong>Author:</strong> <a href="{{ book.author.get_absolute_url}}">{{ book.author }}</a></p> <!-- author detail link not yet defined -->
+    <p><strong>Author:</strong> <a href="{{ book.author.get_absolute_url }}">{{ book.author }}</a></p>
+    <!-- author detail link not yet defined -->
     <p><strong>Summary:</strong> {{ book.summary }}</p>
     <p><strong>ISBN:</strong> {{ book.isbn }}</p>
     <p><strong>Language:</strong> {{ book.language }}</p>
     <p><strong>Genre:</strong> {% for genre in book.genre.all %}
         {{ genre }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+
+    {% if perms.catalog.can_mark_returned %}
+        <a href="{{ book.get_absolute_url }}/update">Update</a>
+        <a href="{{ book.get_absolute_url }}/delete">Delete</a>
+    {% endif %}
 
     <div style="margin-left:20px;margin-top:20px">
         <h4>Copies</h4>

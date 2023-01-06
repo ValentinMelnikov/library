@@ -5,6 +5,10 @@
     <p><strong>Last Name:</strong> {{ author.last_name }}</p>
     <p><strong>Date of Birth:</strong> {{ author.date_of_birth }}</p>
     <p><strong>Date of Death:</strong> {{ author.date_of_death }}</p>
+     {% if perms.catalog.can_mark_returned %}
+        <a href="{{ author.get_absolute_url }}/update">Update</a>
+        <a href="{{ author.get_absolute_url }}/delete">Delete</a>
+    {% endif %}
     <div style="margin-left:20px;margin-top:20px">
         <h4>Books</h4>
 
