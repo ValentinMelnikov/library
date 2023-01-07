@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView
-from .models import Book, Author, BookInstance, Genre
+from .models import Book, Author, BookInstance
 from django.contrib.auth.decorators import permission_required
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
@@ -48,6 +48,7 @@ class BookDetailView(DetailView):
 class AuthorListView(ListView):
     template_name = 'authors/author_list.html'
     model = Author
+    paginate_by = 5
 
 
 class AuthorDetailView(DetailView):
