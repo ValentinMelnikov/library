@@ -5,8 +5,11 @@
 
     <p><strong>Author:</strong> <a href="{{ book.author.get_absolute_url }}">{{ book.author }}</a></p>
     <!-- author detail link not yet defined -->
-    <p><strong>Summary:jksdfkjhdsjkhdsfjkhfshjksfdhjksfdhjkdsfhjkldsfhjkfds</strong> {{ book.summary }}</p>
-    <p><strong>ISBN:jjhsdfhjksdjkhfhjksdfhjkfsdhjkfsdhjkfsdhjk</strong> {{ book.isbn }}</p>
+    фывфывфыв
+
+    фывфывфывфыв<p><strong>Summary:jksdfkjhdsjkhdsfjkhfshjksfdhjksfdhjkdsfhjkldsfhjkfds</strong> {{ book.summary }}</p>
+    <p><strong>ISBN:jjhsdfhjksdjkhfhjksdfhjkfsdhjkfsdhjkfsdфывфывhjk</strong> {{ book.isbn }}</p>
+    фывфывфывфыв
     <p><strong>Language:</strong> {{ book.language }}</p>
     <p><strong>Genre:</strong> {% for genre in book.genre.all %}
         {{ genre }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
